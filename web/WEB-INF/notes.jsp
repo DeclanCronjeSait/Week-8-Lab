@@ -29,7 +29,7 @@
                 <tr>
                     <th>${note.noteId}</th>
                     <th>${note.dateCreated}</th>
-                    <th>${note.contents}</th>
+                    <th>${note.content}</th>
                     <th>
                         <form method="post" action="notes?action=delete">
                             <input type="submit" value="Delete"/>  
