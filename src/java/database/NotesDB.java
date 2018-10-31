@@ -71,9 +71,7 @@ public class NotesDB {
             rs = ps.executeQuery();
             List<Note> notes = new ArrayList<>();
             while (rs.next()) {
-                notes.add(new Note(rs.getInt("noteId"),
-                                    dateformat.format(rs.getDate("dateCreated")),
-                                    rs.getString("content")));
+                notes.add(new Note(rs.getInt("noteId"), rs.getDate("dateCreated"), rs.getString("content")));
             }
             pool.freeConnection(connection);
             return notes;
@@ -106,9 +104,7 @@ public class NotesDB {
 
             Note note = null;
             while (rs.next()) {
-                note = new Note(rs.getInt("noteId"),
-                                dateformat.format(rs.getDate("dateCreated")),
-                                rs.getString("content"));
+                note = new Note(rs.getInt("noteId"), rs.getDate("dateCreated"), rs.getString("content"));
             }
             pool.freeConnection(connection);
             return note;
